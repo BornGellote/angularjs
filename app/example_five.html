@@ -1,0 +1,35 @@
+<div class="container-fluid" ng-app="myApp">
+    <div class="exam section-padding">
+
+        <div class="container ng-scope" >
+            <h1>Example Page Five</h1>
+            <div class="body-cont" ng-controller="myCustomController">
+
+                <button class="btn btn-info" ng-click="chiliSpicy()">Chili</button>
+                <button class="btn btn-info" ng-click="jalapenoSpicy()">Jalapeño</button>
+                <input class="form-control" ng-model="customSpice"><button class="btn btn-info" ng-click="spicy(customSpice)">Custom spice</button>
+                <p>The food is {{spice}} spicy!</p>
+            </div>
+            <div class="spicy">
+                <div ng-controller="MainController">
+                    <lable>Enter First Name</lable>
+                    <input class="form-control" ng-model="namef" ng-keyup="NameChangeFN()">
+                    <p>Good {{timeOfDay}}, {{greetingfn}}!</p>
+
+                    <div ng-controller="ChildController">
+                        <lable>Enter Last Name</lable>
+                        <input class="form-control" ng-model="namel" ng-keyup="NameChangeLN()">
+                        <p>Good {{timeOfDay}}, {{greetingln}}!</p>
+
+                        <div ng-controller="GrandChildController">
+                            <lable>Enter Last Name</lable>
+                            <input class="form-control" ng-model="nameend" ng-keyup="NameChangeEND()">
+                            <p>Good {{timeOfDay}}, {{greetingend}}!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

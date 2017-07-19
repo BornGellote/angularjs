@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        angular.module('CounterApp', [])
+            .controller('CounterController', function($scope, $timeout) {
+                var timer;
+                $scope.counter = 0;
+                $scope.stopCounter = function() {
+                    $timeout.cancel(timer);
+                    timer = null;
+                };
+                $scope.startCounter = function() {
+                    if (timer === null) {
+                        updateCounter();
+                    }
+                };
+                var updateCounter = function() {
+                    $scope.counter++;
+                    timer = $timeout(updateCounter, 1000);
+                };
+                updateCounter();
+            });
+    </script>
+</head>
+<body>
+    <div ng-app="CounterApp">
+        <div ng-controller="CounterController">
+            {{counter}}
+            <button ng-click="stopCounter()">Stop</button>
+            <button ng-click="startCounter()">Start</button>
+        </div>
+    </div>
+    <a href="index.html">Back to Main</a>
+    <a href="two_name.html">Two Form Name</a>
+    <a href="test_two.html">Price</a>
+    <a href="two_number.html">Calculator</a>
+    <a href="count_timer.html">Timer</a>
+    <a href="custom_index.html">Custom Page</a>
+    <a href="phonecat/phonecat.html">PhoneCat App</a>
+    <a href="source/index.html">Todo list</a>
+</body>
+</html>

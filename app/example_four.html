@@ -1,0 +1,22 @@
+<div class="container-fluid" ng-app="myApp">
+    <div class="exam section-padding">
+
+        <div class="container ng-scope" >
+            <h1>Example Page Four</h1>
+            <div ng-controller="CalculatorController">
+                <p>Num 1: <input type="number" class="form-control" ng-model="a"></p>
+                <p>Num 2: <input type="number" class="form-control"  ng-model="b"></p>
+                <p>Mathematical operation:
+                    <select class="selectpicker" ng-model="operator">
+                        <option>+</option>
+                        <option>*</option>
+                        <option>-</option>
+                        <option>/</option>
+                    </select>
+                </p>
+                <p>Result: {{ result() }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+

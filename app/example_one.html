@@ -1,0 +1,44 @@
+<div class="container-fluid" ng-app="myApp">
+    <div class="exam section-padding">
+
+        <div class="container ng-scope">
+            <h1>Example Page One</h1>
+
+            <div class="name">
+              <p>Input something in the input box:</p>
+              <p>Name: <input type="text" class="form-control" ng-model="name"></p>
+              <p ng-bind="name"></p>
+            </div>
+              <div class="hello">
+                  <p>Hello Angular {{ 19 + 23 }}</p>
+              </div>
+              <div class="x_y">
+                  {{ x = 23; y = 19; x + y }}
+              </div>
+              <div class="result">
+                  <div>
+                    Result
+                    {{ z + q }}
+                </div>
+                  <div>
+                    Assignment:
+                    {{ z = 23; q= 19 }}
+                </div>
+                  <div>
+                    Result
+                    {{ z + q }}
+                </div>
+              </div>
+              <div class="x_y_str">
+                  {{ x = 'hello'; y = 'world'; x + ' ' + y }}
+              </div>
+
+                <div class="inc_dec">
+                    <div ng-init="counter = 0"></div>
+                    <button class="btn btn-info" ng-click="counter = counter + 1">Increment</button>
+                    <button class="btn btn-danger" ng-click="counter = counter - 1">Decrement</button>
+                    {{counter}}
+                </div>
+        </div>
+    </div>
+</div>
